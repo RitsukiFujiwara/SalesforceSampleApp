@@ -1,0 +1,48 @@
+<apex:page controller="ContactUser" standardStylesheets="false" showHeader="false" docType="html-5.0">
+    <head>
+        <title>SampleApp-NewAccount</title>
+    </head>
+    <body>
+        <div class="container mt60" id="mainContainer" style="margin-top: 130px">
+
+            <section>
+                
+            <ul class="breadcrumb">
+            <li><a href="{!$Page.home}">トップ</a></li>
+            <li class="active">新規ユーザー登録</li>
+            <li style="color: #888;">登録完了</li>
+            </ul>
+            
+            <h1 class="page-header">ようこそ！</h1>
+            <p>初めての方はユーザー登録をしてください。</p>
+            </section>
+
+            <apex:form>
+            <div class="control-group">
+                <label class="control-label">氏名</label>
+                <div class="controls">
+                    <apex:input value="{!inputNewName}" required="true" html-placeholder="山田太郎"/> 
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">メールアドレス</label>
+                <div class="controls">
+                    <apex:input value="{!inputNewEmail}" required="true" html-placeholder="aaa@bbb.com"/> 
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">パスワード</label>
+                <div class="controls">
+                    <apex:inputSecret value="{!inputNewPassword}" required="true" />
+                    <div class="help-block">パスワードは6桁以上にしてください。</div> 
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <apex:commandButton action="{!ContactUser}" value="ユーザーを登録する" />
+                </div>
+            </div>
+        </apex:form>
+        </div>
+    </body>
+</apex:page>
