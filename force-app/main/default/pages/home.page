@@ -1,6 +1,20 @@
-<apex:page>
-<!-- Begin Default Content REMOVE THIS -->
-<h1>Congratulations</h1>
-This is your new Page
-<!-- End Default Content REMOVE THIS -->
+<apex:page controller="ContactUser"  standardStylesheets="false" showHeader="false"  docType="html-5.0">
+    <section id="card">
+        <apex:repeat value="{!nameList}" var="pro" rows="6">
+            <apex:form >
+            <div class="card">
+                <img class="card-img-top" src="/resource/1525590750000/{!pro.img__c}" alt="{!pro.Name}" />
+                <div class="card-body">
+                    <p class="card-title">{!pro.Name}&nbsp;￥{!pro.price__c}</p>
+                    <p class="card-text">{!pro.Description}</p>
+                        <apex:outputLink styleclass="btn btn-primary" value="{!$Page.home}" >カートに入れる
+                        <apex:param name="i" value="{!pro.Id}"/>
+                        </apex:outputLink>
+                </div>
+            </div>
+
+        </apex:form>
+        </apex:repeat>
+
+</section>
 </apex:page>
